@@ -4,6 +4,7 @@ require('dotenv').config() // init dotenv
 const mongoConfig = require('./config/mongoConfig');
 const router = require("./routes/todosRouter");
 const todosRouter = require('./routes/todosRouter')
+const usersRouter = require('./routes/usersRouters')
 
 const app = express()
 const PORT = 4000
@@ -13,6 +14,7 @@ app.use(express.json())
 
 //* === Routers
 app.use('/todos', todosRouter)
+app.use('/user', usersRouter)
 
 //* ==== Root Route
 app.get('/', (req, res) => {

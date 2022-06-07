@@ -1,10 +1,10 @@
 const express = require('express')
-const UserModel = require('../Models/userSchema')
+const UserModel = require('../models/userSchema')
 
-//* ======= Create A Router
+// * Create a Router
 const router = express.Router()
 
-//* ====== CREATE A NEW USER
+//* Create a new User
 router.post('/', async (req, res) => {
     const userData = req.body
 
@@ -12,13 +12,12 @@ router.post('/', async (req, res) => {
         const user = await UserModel.create(userData)
         res.status(201).json(user)
     } catch (error) {
-        console.log(error);
-        res.status(400).json('Bad request homie')
+        console.log(error)
+        res.status(400).json('Bad request!!!!!')
     }
 })
 
 module.exports = router
-
 
 
 
